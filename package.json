@@ -1,0 +1,19 @@
+{
+  "name": "hellofresh-crawler",
+  "version": "0.1.0",
+  "description": "HelloFresh API Crawler",
+  "main": "/server.js",
+  "author": "Alex Papounidis",
+  "dependencies": {
+    "axios": "^0.19.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "HelloFresh",
+    "Crawler"
+  ],
+  "license": "MIT"
+}
