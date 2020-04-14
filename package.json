@@ -2,7 +2,7 @@
   "name": "hellofresh-crawler",
   "version": "0.1.0",
   "description": "HelloFresh API Crawler",
-  "main": "/server.js",
+  "main": "/crawler-main.js",
   "author": "Alex Papounidis",
   "dependencies": {
     "axios": "^0.19.2",
@@ -10,7 +10,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node server.js"
+    "start": "node crawler-main.js"
   },
   "keywords": [
     "HelloFresh",
