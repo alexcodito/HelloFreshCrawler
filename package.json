@@ -2,15 +2,15 @@
   "name": "hellofresh-crawler",
   "version": "0.1.0",
   "description": "HelloFresh API Crawler",
-  "main": "/crawler-main.js",
+  "main": "/index.js",
   "author": "Alex Papounidis",
   "dependencies": {
-    "axios": "^0.19.2",
-    "yargs": "^15.3.1"
+    "axios": "^0.21.1",
+    "yargs": "^15.4.1"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node crawler-main.js"
+    "start": "node index.js"
   },
   "keywords": [
     "HelloFresh",
