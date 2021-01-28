@@ -85,7 +85,7 @@ const downloadRecipeCards = async function (items) {
 
     console.log(`- Recipe card downloads completed. Saving ${downloadedCards.length} PDF files.`);
 
-    // Save without overwritting existing files.
+    // Save without overwriting existing files.
     downloadedCards.forEach((item) => {
       fs.writeFile(
         `${recipeCardSaveDirectory}/${item.name}.pdf`,
