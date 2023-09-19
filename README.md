@@ -15,7 +15,7 @@ Supports crawling on US,GB and DE recipe archives that are publically available 
   
 ### Usage
 
-`node crawler-main.js HelloFresh -l GB -s ./downloads`
+`node index.js HelloFresh -l GB -s ./downloads`
 
 The above will download every PDF recipe card from the specified country's archive into the specified local directory.
 
