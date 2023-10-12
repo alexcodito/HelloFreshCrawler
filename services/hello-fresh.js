@@ -1,6 +1,6 @@
 const axios = require("axios");
 const fs = require("fs");
-
+const { colours } = require("../utils/colours");
 const { splitArrayBatch } = require("../utils/array");
 
 const siteUrl = "https://www.hellofresh.com";
@@ -195,7 +195,9 @@ const crawl = async function (settings) {
 
   while (currentPage <= pages) {
     console.log(
-      `\x1b[32m[Batch ${currentPage}/${pages}] Downloading ${searchResponse.data.items.length} search results:\x1b[0m`
+      colours.fg.green,
+      `Batch [${currentPage}/${pages}] Downloading ${searchResponse.data.items.length} search results:`,
+      colours.reset
     );
 
     await downloadRecipeCards(searchResponse.data.items);

@@ -10,7 +10,7 @@ Supports crawling on US,GB and DE recipe archives that are publically available 
 
 - **Automatic Retries:** It attempts to download all recipes it finds with 3 retries, handling connection timeouts and other issues gracefully.
 
-- **Collaboration:** HelloFreshCrawler is based on the [@alexcodito](https://github.com/alexcodito/HelloFreshCrawler) and was further built on to provide enhanced functionality.
+- **Collaboration:** HelloFreshCrawler is based on the version from [@alexcodito](https://github.com/alexcodito/HelloFreshCrawler) and was further built on to provide enhanced functionality by [@kevinrodd].
 
   
 ### Usage

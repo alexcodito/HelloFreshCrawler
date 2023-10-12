@@ -1,5 +1,5 @@
 const yargs = require("yargs");
-
+const { colours } = require("./utils/colours");
 const helloFresh = require("./services/hello-fresh");
 
 // Parse command-line configurations
@@ -28,7 +28,9 @@ const argv = yargs
   ).argv;
 
 console.log(
-  `\x1b[32m Performing crawl on ${argv._} using ${argv.locale} locale \x1b[0m`
+  colours.fg.green,
+  `Performing crawl on ${argv._} using ${argv.locale} locale`,
+  colours.reset
 );
 
 if (argv._[0] === "HelloFresh") {
