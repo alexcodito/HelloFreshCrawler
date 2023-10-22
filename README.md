@@ -2,11 +2,20 @@
 
 Recipe crawler for the popular HelloFresh meal-kit provider.
 
-Supports crawling on both the GB and US recipe archives that are publically available on www.hellofresh.com.
+Supports crawling on US,GB and DE recipe archives that are publically available on www.hellofresh.com.
 
+### Features
+
+- **Multi-Language Support:** HelloFreshCrawler now supports recipes in English (GB), English (US), and German (DE).
+
+- **Automatic Retries:** It attempts to download all recipes it finds with 3 retries, handling connection timeouts and other issues gracefully.
+
+- **Collaboration:** HelloFreshCrawler is based on the version from [@alexcodito](https://github.com/alexcodito/HelloFreshCrawler) and was further built on to provide enhanced functionality by [@kevinrodd].
+
+  
 ### Usage
 
-`node crawler-main.js HelloFresh -l GB -s ./downloads`
+`node index.js HelloFresh -l GB -s ./downloads`
 
 The above will download every PDF recipe card from the specified country's archive into the specified local directory.
 
