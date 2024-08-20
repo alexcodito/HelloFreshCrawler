@@ -10,7 +10,7 @@ let recipeCardSaveDirectory = "./recipe-card-pdfs";
 
 const apiSearchParams = {
   offset: 0,
-  limit: 250,
+  limit: 500,
   product: ["classic-box", "veggie-box", "meal-plan", "family-box"],
   locale: "en-US",
   country: "us",
@@ -147,6 +147,8 @@ const crawl = async function (settings) {
   if (settings.locale) {
     if (settings.locale === "DE") {
       apiSearchParams.locale = `de-${settings.locale.toUpperCase()}`;
+    } else if (settings.locale === "FR") {
+      apiSearchParams.locale = `fr-${settings.locale.toUpperCase()}`; // Gestion de la locale FR
     } else {
       apiSearchParams.locale = `en-${settings.locale.toUpperCase()}`;
     }
@@ -186,7 +188,7 @@ const crawl = async function (settings) {
   let currentPage = 1;
   let pages = Math.round(
     (searchResponse.data.total - searchResponse.data.skip) /
-      apiSearchParams.limit
+    apiSearchParams.limit
   );
 
   console.log(
@@ -220,5 +222,6 @@ const crawl = async function (settings) {
     currentPage++;
   }
 };
+
 
 module.exports = { crawl };
