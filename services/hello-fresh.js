@@ -17,6 +17,24 @@ const apiSearchParams = {
   ["max-prep-time"]: 60,
 };
 
+// Helper function to sanitize file names
+const sanitizeFileName = (name) => {
+  return name
+      .replace(/[#%&{}\\<>\*\?\/$!'":@+`|=]/g, '')  // Remove listed symbols
+      .replace(/\s+/g, ' ')  // Replace multiple spaces with a single space
+      .replace(/[\t\n\r]/g, '')  // Remove tabs, newlines, and carriage returns
+      .replace(/[\u{1F600}-\u{1F64F}]/gu, '')  // Remove emoticons
+      .replace(/[\u{1F300}-\u{1F5FF}]/gu, '')  // Remove other symbols and pictographs
+      .replace(/[\u{1F680}-\u{1F6FF}]/gu, '')  // Remove transport and map symbols
+      .replace(/[\u{2600}-\u{26FF}]/gu, '')    // Remove miscellaneous symbols
+      .replace(/[\u{2700}-\u{27BF}]/gu, '')    // Remove dingbats and arrows
+      .replace(/[\u{FE00}-\u{FE0F}]/gu, '')    // Remove variation selectors
+      .replace(/[\u{1F900}-\u{1F9FF}]/gu, '')  // Remove supplemental symbols and pictographs
+      .replace(/[\u{1F1E6}-\u{1F1FF}]/gu, '')  // Remove flag symbols
+      .trim();  // Remove leading and trailing spaces
+};
+
+
 const fetchApiToken = async function () {
   try {
     // Load the regular site to grab an access token
@@ -129,7 +147,8 @@ const downloadRecipeCards = async function (items) {
     );
 
     downloadedCards.forEach((item) => {
-      const filePath = `${recipeCardSaveDirectory}/${item.name}.pdf`;
+      const sanitizedFileName = sanitizeFileName(item.name);
+      const filePath = `${recipeCardSaveDirectory}/${sanitizedFileName}.pdf`;
 
       // Only save if the file does not exist
       if (!fs.existsSync(filePath)) {
@@ -186,7 +205,7 @@ const crawl = async function (settings) {
   let currentPage = 1;
   let pages = Math.round(
     (searchResponse.data.total - searchResponse.data.skip) /
-      apiSearchParams.limit
+    apiSearchParams.limit
   );
 
   console.log(
