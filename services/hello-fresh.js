@@ -148,7 +148,7 @@ const crawl = async function (settings) {
     if (settings.locale === "DE") {
       apiSearchParams.locale = `de-${settings.locale.toUpperCase()}`;
     } else if (settings.locale === "FR") {
-      apiSearchParams.locale = `fr-${settings.locale.toUpperCase()}`; // Gestion de la locale FR
+      apiSearchParams.locale = `fr-${settings.locale.toUpperCase()}`;
     } else {
       apiSearchParams.locale = `en-${settings.locale.toUpperCase()}`;
     }

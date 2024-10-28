@@ -10,7 +10,7 @@ const argv = yargs
     locale: {
       alias: "l",
       describe: "Locale to perform crawling on.",
-      choices: ["US", "GB", "DE", "FR"], // Ajout de "FR" ici
+      choices: ["US", "GB", "DE", "FR"],
       default: "US",
       nargs: 1,
     },
@@ -26,7 +26,6 @@ const argv = yargs
     "$0 HelloFresh -l GB -s ./downloads",
     "Crawl on HelloFresh and use the GB locale"
   ).argv;
-
 
 console.log(
   colours.fg.green,
