@@ -10,7 +10,7 @@ const argv = yargs
     locale: {
       alias: "l",
       describe: "Locale to perform crawling on.",
-      choices: ["US", "GB", "DE"],
+      choices: ["US", "GB", "DE", "FR"],
       default: "US",
       nargs: 1,
     },
